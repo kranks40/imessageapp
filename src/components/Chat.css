@@ -54,6 +54,7 @@
     display: none;
 }
 
-.chat__message {
+.chat__messages {
     flex: 1;
+    overflow: scroll;
 }
