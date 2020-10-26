@@ -14,7 +14,7 @@ function SidebarChat({ id, chatName }) {
         db.collection('chats')
         .doc(id)
         .collection('message')
-        .orderBy('timestamp', 'decs')
+        .orderBy('timestamp', 'desc')
         .onSnapshot(snapshot => (
             setChatInfo(snapshot.docs.map(doc => doc.data()))
         ))

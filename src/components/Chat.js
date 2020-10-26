@@ -23,10 +23,10 @@ function Chat() {
             .doc(chatId)
             .collection('message')
             .orderBy('timestamp', 'desc')
-            .onSnapshot(snapshot => (
+            .onSnapshot((snapshot) => (
                 setMessage(snapshot.docs.map(doc => ({
                     id: doc.id,
-                    data: doc.data,
+                    data: doc.data(),
                 })))
             ));
         }
@@ -35,7 +35,10 @@ function Chat() {
     const sendMessage = (e) => {
         e.preventDefault();
 
-        db.collection('chats').doc(chatId).collection('message').add({
+        db.collection('chats')
+        .doc(chatId)
+        .collection('message')
+        .add({
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             message: input,
             uid: user.uid,
@@ -68,7 +71,7 @@ function Chat() {
 
             <div className="chat__input">
                 <form>
-                    <input value={input} onChange={e => setInput(e.target.value)} placeholder='iMessage' type='text'/>
+                    <input value={input} onChange={(e) => setInput(e.target.value)} placeholder='iMessage' type='text'/>
                     <button onClick={sendMessage}>Send Message</button>
                 </form>
                 <IconButton>

@@ -9,13 +9,13 @@
 
 .sidebarChat:hover {
     background-color: #4a84e9;
+    color: white;
 }
 
 .sidebarChat__info {
     margin-left: 15px;
     position: relative;
     width: 100%;
-
 }
 
 .sidebarChat__info > small {

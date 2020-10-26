@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import './Message.css';
 
-const Message = forwardRef (
-({ id, contents: { photo, email, displayName, timestamp, message, uid},
-    ref
-}) => {
+const Message = forwardRef (({ 
+    id, contents: { photo, email, displayName, timestamp, message, uid},
+}, ref) => {
     const user = useSelector(selectUser);
 
     return (

@@ -7,6 +7,7 @@
     margin: 15px;
 }
 
+
 .message > p {
     background-color: #f3f3f5;
     font-size: medium;
@@ -19,7 +20,7 @@
 .message > small {
     color: gray;
     position: absolute;
-    font-size: 8px;
+    font-size: 10px;
     bottom: -5px;
     right: 0;
 }
