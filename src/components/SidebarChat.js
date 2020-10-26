@@ -5,6 +5,7 @@ import { setChat } from '../features/chatSlice';
 import './SidebarChat.css';
 import db from '../utils/firebase';
 import * as timeago from 'timeago.js';
+//import moment from 'moment';
 
 function SidebarChat({ id, chatName }) {
     const dispatch = useDispatch()
@@ -34,6 +35,7 @@ function SidebarChat({ id, chatName }) {
             <div className="sidebarChat__info">
                 <h3>{chatName}</h3>
                 <p>{chatInfo[0]?.message}</p>
+                    {/* <small>{ moment().format().(chatInfo[0]?) }</small> */}
                 <small>{timeago.format(new Date(chatInfo[0]?.timestamp?.toDate()).toLocaleString())}</small>
             </div>
         </div>
